@@ -40,6 +40,10 @@ void interpret(stack_t **stack, char *line, unsigned int line_number)
 	{
 		pint(stack, line_number);
 	}
+	else if (strcmp(opcode, "pop") == 0)
+	{
+		pop(stack, line_number);
+	}
 	else
 	{
 		instruct_error(opcode, line_number);
