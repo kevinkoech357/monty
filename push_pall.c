@@ -3,7 +3,7 @@
 /**
 * push - pushes new elements into stack_t
 *
-* @stack: pointer to pointer to stack 
+* @stack: pointer to pointer to stack
 *
 * @value: new data to be added to stack_t
 *
@@ -48,5 +48,15 @@ void push(stack_t **stack, int value, size_t line_number)
 
 void pall(stack_t **stack)
 {
+	stack_t *current;
+
+	current = *stack;
+
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
+}
 
 }
