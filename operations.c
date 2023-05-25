@@ -81,3 +81,18 @@ void swap(stack_t **stack, unsigned int line_number)
 	top->prev = *stack;
 }
 
+/**
+* nop - voids all
+*
+* @stack: pointer to pointer to stack_t
+*
+* @line_number: line number with nop command
+*
+* Return: void
+*/
+
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
