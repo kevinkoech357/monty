@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Global variables */
+#define MAX_LENGTH 256
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,8 +42,11 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Function prototypes */
-void push(stack_t **stack, int value, size_t line_number);
+void push(stack_t **stack, int value, unsigned int line_number);
 void pall(stack_t **stack);
+void read_file(const char *test_file);
+void interpret(stack_t **stack, char *line, unsigned int line_number);
+void instruct_error(char *instruction, unsigned int line);
 
 #endif /* MONTY_H */
 
