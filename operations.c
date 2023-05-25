@@ -22,3 +22,32 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/**
+* pop - removes the last added element in stack_t
+*
+* @stack: pointer to pointer to stack_t
+*
+* @line_number: line number with the pop command
+*
+* Return: void
+*
+*/
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stacki *tempo;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit (EXIT_FAILURE);
+	}
+
+	tempo = *stack;
+	*stack = (*stack)->next;
+
+	if (*stack != NULL)
+	{
+		(*stack)->prev = NULL;
+	}
+}
