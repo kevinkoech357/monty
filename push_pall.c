@@ -13,9 +13,10 @@
 *
 */
 
-void push(stack_t **stack, int value, size_t line_number)
+void push(stack_t **stack, int value, unsigned int line_number)
 {
 	stack_t *new_node;
+	(void)line_number;
 
 	new_node = malloc(sizeof(stack_t));
 
@@ -59,4 +60,3 @@ void pall(stack_t **stack)
 	}
 }
 
-}
