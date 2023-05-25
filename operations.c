@@ -40,7 +40,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	tempo = *stack;
@@ -52,3 +52,32 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	free(tempo);
 }
+
+/**
+* swap - swaps the 2 elements at the top of stack_t
+*
+* @stack: pointer to pointer to stack_t
+*
+* @line_number: line number with swap command
+*
+* Return: void
+*/
+
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	top = *stack;
+	*stack = (*stack)->next;
+	top->next = (*stack)->next;
+	(*stack)->next = top;
+	(*stack)->prev = NULL;
+	top->prev = *stack;
+}
+
