@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	const char *test_file;
-	
+
 	/* checks command line args used during execution */
 	if (argc != 2)
 	{
@@ -22,5 +22,7 @@ int main(int argc, char *argv[])
 	}
 
 	test_file = argv[1];
+	read_file(test_file);
+
 	return (0);
 }
