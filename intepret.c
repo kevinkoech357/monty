@@ -48,6 +48,9 @@ void interpret(stack_t **stack, char *line, unsigned int line_number)
 	{
 		swap(stack, line_number);
 	}
+	else if (strcmp(opcode, "nop") == 0)
+	{
+	}
 	else
 	{
 		instruct_error(opcode, line_number);
