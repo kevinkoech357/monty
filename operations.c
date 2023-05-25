@@ -35,7 +35,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stacki *tempo;
+	stack_t *tempo;
 
 	if (*stack == NULL)
 	{
@@ -50,4 +50,5 @@ void pop(stack_t **stack, unsigned int line_number)
 	{
 		(*stack)->prev = NULL;
 	}
+	free(tempo);
 }
