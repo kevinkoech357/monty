@@ -48,6 +48,7 @@ void read_file(const char *test_file);
 void interpret(stack_t **stack, char *line, unsigned int line_number);
 void instruct_error(char *instruction, unsigned int line);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
 
